@@ -102,10 +102,10 @@ class PemesananController extends GetxController {
   @override
   void onClose() {
     // TODO: implement onClose
-    cPassword = TextEditingController();
-    cEmail = TextEditingController();
-    cTelp = TextEditingController();
-    cJumlah = TextEditingController();
+    cPassword.dispose();
+    cEmail.dispose();
+    cTelp.dispose();
+    cJumlah.dispose();
     super.onClose();
   }
 }

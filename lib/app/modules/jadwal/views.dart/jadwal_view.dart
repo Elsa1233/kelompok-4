@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/modules/pemesanan/controllers/pemesanan_controller.dart';
+import 'package:myapp/app/modules/jadwal/controllers/jadwal_controller.dart';
 
 
-class PemesananView extends GetView<PemesananController> {
-  const PemesananView({super.key});
+class JadwalView extends GetView<JadwalController> {
+
+  const JadwalView({super.key});
+  
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
@@ -55,13 +58,13 @@ class PemesananView extends GetView<PemesananController> {
               height: 15,
             ),
             TextField(
-              controller: controller.cEmail,
+              controller: controller.cJadwal_kunjungan,
               autocorrect: false,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
                 fillColor: Color(0xFFD6D6D6),
                 filled: true,
-                labelText: "Masukkan Email",
+                labelText: "jumlah pengunjung",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -71,9 +74,9 @@ class PemesananView extends GetView<PemesananController> {
               height: 10,
             ),
             TextField(
-              // controller: controller.cPassword,
+              controller: controller.cJumlah_pengunjung,
               textInputAction: TextInputAction.done,
-              obscureText: true,
+              obscureText: false,
               decoration: InputDecoration(
                 fillColor: Color(0xFFD6D6D6),
                 filled: true,
@@ -86,45 +89,14 @@ class PemesananView extends GetView<PemesananController> {
             SizedBox(
               height: 10,
             ),
-            TextField(
-              // controller: controller.cTelp,
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(
-                fillColor: Color(0xFFD6D6D6),
-                filled: true,
-                labelText: "Masukkan Nomor Telepon",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              // controller: controller.cJumlah,
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(
-                fillColor: Color(0xFFD6D6D6),
-                filled: true,
-                labelText: "Jumlah Pemesanan Tiket",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
+          
             Container(
               width: double.infinity, // Mengisi lebar secara penuh
               child: ElevatedButton(
                 onPressed: () {
                   controller.add(
-                    controller.cPassword.text,
-                    controller.cEmail.text,
-                    controller.cTelp.text,
-                    controller.cJumlah.text,
+                    controller.cJadwal_kunjungan.text,
+                    controller.cJumlah_pengunjung.text,
                   );
                 },
                 child: Text("Simpan"),

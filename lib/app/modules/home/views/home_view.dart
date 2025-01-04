@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:myapp/app/controllers/auth_controllers.dart';
 
 import 'package:myapp/app/modules/home/views/beranda_view.dart';
+import 'package:myapp/app/modules/jadwal/views.dart/jadwal_view.dart';
 import 'package:myapp/app/modules/pemesanan/views/pemesanan_view.dart';
-
 
 import '../controllers/home_controller.dart';
 
@@ -31,22 +31,18 @@ class _DashboardAdminState extends State<DashboardAdmin> {
     {
       'title': 'Beranda',
       'view': BerandaView(),
-      
     },
     {
       'title': 'Pesan Tiket',
       'view': PemesananView(),
-      
     },
     {
       'title': 'pilih jadwal',
-      'view': BerandaView(),
-      
+      'view': JadwalView(),
     },
     {
       'title': 'histori pembelian',
       'view': BerandaView(),
-      
     },
   ];
   @override
@@ -142,6 +138,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
           ),
           ListTile(
             onTap: () {
+      
               setState(() => _index = 3);
               Get.back();
             },
